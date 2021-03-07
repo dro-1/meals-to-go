@@ -7,6 +7,9 @@
             {
                 "avoidEscape": true
             }
-        ]
+        ],
+        "prettier/prettier": ["error", {
+            "endOfLine": "auto"
+        }]
     }
 }
