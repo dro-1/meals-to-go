@@ -21,7 +21,7 @@ const SearchbarContainer = styled.View`
 
 const ListContainer = styled.View`
   flex: 1;
-  background-color: ${(props) => props.theme.colors.brand.primary};
+  background-color: ${(props) => props.theme.colors.ui.quaternary};
   width: 100%;
   padding: ${(props) => props.theme.space[3]};
 `;
