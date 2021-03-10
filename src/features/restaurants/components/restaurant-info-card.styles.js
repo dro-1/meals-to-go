@@ -16,10 +16,6 @@ export const RestaurantType = styled.Image`
   height: ${(props) => props.theme.sizes[1]};
 `;
 
-export const RestaurantClosedTemporarily = styled.Text`
-  color: ${(props) => props.theme.colors.ui.error};
-`;
-
 export const Rating = styled.View`
   padding-top: ${(props) => props.theme.space[2]};
   padding-bottom: ${(props) => props.theme.space[2]};

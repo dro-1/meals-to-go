@@ -12,7 +12,6 @@ import {
   DetailsEnd,
   Info,
   RestaurantCard,
-  RestaurantClosedTemporarily,
   Rating,
   RestaurantType,
 } from "./restaurant-info-card.styles";
@@ -36,7 +35,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
     <RestaurantCard elevation={5}>
       <RestaurantCardCover source={{ uri: photos[0] }} />
       <Info>
-        <Text>{name}</Text>
+        <Text variant="label">{name}</Text>
         <Details>
           <Rating>
             {ratingArray.map((item, index) => (
@@ -45,9 +44,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
           </Rating>
           <DetailsEnd>
             {isClosedTemporarily && (
-              <RestaurantClosedTemporarily variant="label">
-                CLOSED TEMPORARILY
-              </RestaurantClosedTemporarily>
+              <Text variant="error">CLOSED TEMPORARILY</Text>
             )}
             <Spacer size="medium" position="left">
               {isOpenNow && <SvgXml xml={open} width={30} height={30} />}

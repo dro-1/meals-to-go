@@ -46,7 +46,6 @@ const TextView = styled.Text`
 `;
 
 const getVariants = (theme, variant) => {
-  console.log(theme);
   const defaultTheme = defaultTextStyles(theme);
   const extraStyles = variants[variant](theme);
   return `${defaultTheme}
