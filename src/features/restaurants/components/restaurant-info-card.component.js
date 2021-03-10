@@ -1,60 +1,21 @@
 import React from "react";
-import { Card } from "react-native-paper";
-import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
-import { Text, Image } from "react-native";
+import { Text } from "./../../../components/typography/text";
 
 import star from "./../../../../assets/star";
 import open from "./../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
-
-const RestaurantCard = styled(Card)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-//const RestaurantCardCover = styled(Card.Cover)``
-
-const Info = styled.View`
-  padding-top: ${(props) => props.theme.space[3]};
-`;
-
-const RestaurantType = styled.Image`
-  width: ${(props) => props.theme.sizes[1]};
-  height: ${(props) => props.theme.sizes[1]};
-`;
-
-const RestaurantClosedTemporarily = styled.Text`
-  color: ${(props) => props.theme.colors.ui.error};
-`;
-
-const Rating = styled.View`
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-  flex-direction: row;
-`;
-
-const Details = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const DetailsEnd = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const Title = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-
-const Address = styled.Text`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
+import {
+  RestaurantCardCover,
+  Address,
+  Details,
+  DetailsEnd,
+  Info,
+  RestaurantCard,
+  RestaurantClosedTemporarily,
+  Rating,
+  RestaurantType,
+} from "./restaurant-info-card.styles";
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -73,9 +34,9 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard elevation={5}>
-      <Card.Cover source={{ uri: photos[0] }} />
+      <RestaurantCardCover source={{ uri: photos[0] }} />
       <Info>
-        <Title>{name}</Title>
+        <Text>{name}</Text>
         <Details>
           <Rating>
             {ratingArray.map((item, index) => (
