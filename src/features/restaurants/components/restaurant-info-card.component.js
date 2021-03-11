@@ -28,7 +28,6 @@ const RestaurantInfoCard = ({ restaurant: { item } }) => {
     rating = 4,
     isClosedTemporarily = true,
   } = item;
-  console.log(item);
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 

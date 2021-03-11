@@ -58,9 +58,9 @@ export default function App() {
                 inactiveTintColor: "gray",
               }}
             >
+              <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
               <Tab.Screen name="Map" component={MapScreen} />
               <Tab.Screen name="Settings" component={SettingsScreen} />
-              <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
             </Tab.Navigator>
           </NavigationContainer>
         </RestaurantsContextProvider>
