@@ -15,6 +15,7 @@ import theme from "./src/infrastructure/theme";
 import RestaurantsScreen from "./src/features/restaurants/screens/restaurants.screen";
 import MapScreen from "./src/features/restaurants/screens/map.screen";
 import SettingsScreen from "./src/features/restaurants/screens/settings.screen";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 export default function App() {
   let [oswaldLoaded] = useOswald({
@@ -48,19 +49,21 @@ export default function App() {
   ) : (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator
-            screenOptions={createScreenOptions}
-            tabBarOptions={{
-              activeTintColor: "#5282BD",
-              inactiveTintColor: "gray",
-            }}
-          >
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-            <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={createScreenOptions}
+              tabBarOptions={{
+                activeTintColor: "#5282BD",
+                inactiveTintColor: "gray",
+              }}
+            >
+              <Tab.Screen name="Map" component={MapScreen} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+              <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantsContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
