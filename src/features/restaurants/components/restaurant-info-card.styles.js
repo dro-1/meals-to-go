@@ -3,6 +3,7 @@ import { Card } from "react-native-paper";
 
 export const RestaurantCard = styled(Card)`
   padding: ${(props) => props.theme.space[3]};
+  width: 100%;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)``;
