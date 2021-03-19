@@ -45,17 +45,18 @@ const TextView = styled.Text`
   ${({ variantStyles }) => variantStyles}
 `;
 
-const getVariants = (theme, variant) => {
+const getVariants = (theme, variant, center) => {
   const defaultTheme = defaultTextStyles(theme);
   const extraStyles = variants[variant](theme);
   return `${defaultTheme}
           ${extraStyles}
+          ${center ? "text-align: center;" : ""}
   `;
 };
 
-export const Text = ({ variant, children }) => {
+export const Text = ({ variant, children, center }) => {
   const theme = useTheme();
-  const variantStyles = getVariants(theme, variant);
+  const variantStyles = getVariants(theme, variant, center);
   return <TextView variantStyles={variantStyles}>{children}</TextView>;
 };
 
